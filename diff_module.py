@@ -67,7 +67,7 @@ def diff_module(module_id, html_type, type_name):
                                     Color.Green,
                                     "Resource added: ")
 
-                print('message send, module added, module id: ' + id)
+                print('message send, module added, ' + type_name  + ' id: ' + id)
         elif len(list1) < len(list2):
             diff = list2 - list1
             for id in diff:
@@ -76,14 +76,11 @@ def diff_module(module_id, html_type, type_name):
                                        "```" + module_info["name"] + "```",
                                       "Go to module",
                                       "Go to module",
-                                    env.Moodle._URLYEARLIST,
+                                    html_compose,
                                     Color.Red,
                                       "Resource deleted")
 
                 print('message send, module deleted , module id: ' + id)
         else:
             print('Error trying to read list of modules ids')
-    else:
-        print('nothing change in modules lists')
-
 
